@@ -13,12 +13,17 @@ public partial class Login : ContentPage
 		string contrasena = "12345";
 
 		if(usuario == TxtUsuario.Text && contrasena == TxtContrasena.Text) {
-			Navigation.PushAsync(new Elementos());
+			Navigation.PushAsync(new Elementos(usuario));
 		}
 		else{
 			DisplayAlert("Alerta", "Usuario o contraseña incorrectos", "Cerrar");
 			TxtContrasena.Text = "";
 			TxtUsuario.Text = "";
 		}
+    }
+
+    private void btnRegistro_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Registro());
     }
 }

@@ -4,9 +4,11 @@ namespace gguachaminS2.Vistas;
 
 public partial class Elementos : ContentPage
 {
-	public Elementos()
+	public Elementos(string usuario)
 	{
 		InitializeComponent();
+        DisplayAlert("Bienvenido", usuario, "Cerrar");
+        lblUsuario.Text = "Usuario conectado " + usuario;
 	}
 
     private void btnPicker_Clicked(object sender, EventArgs e)
